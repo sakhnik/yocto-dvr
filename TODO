@@ -1,0 +1,6 @@
+- root password
+- harden ssh server, key authentication
+- expand root fs or format and mount the whole storage size
+- deploy and launch dvr.sh
+- lighttpd
+- refactory image tweaks as proper yocto customizations

@@ -1,5 +1,3 @@
-# vim: set ft=bitbake
-
 include recipes-core/images/core-image-base.bb
 
 DISTRO_FEATURES += " \
@@ -18,6 +16,7 @@ IMAGE_EXTRA_FEATURES += " \
 IMAGE_INSTALL += " \
   connman \
   connman-client \
+  dvr \
   linux-firmware-bcm43430 \
 "
 
@@ -48,18 +47,7 @@ Name = Beefarm2G
 Passphrase = df8bc97315b948666f1abfb61dfc0da50e93e273acfc3a0a8e5bbbe83baf61bc
 END
 
-  echo "tz:5:respawn:/etc/init.d/dvr" >> ${IMAGE_ROOTFS}/etc/inittab
-  cat >${IMAGE_ROOTFS}/etc/init.d/dvr <<END
-#!/bin/sh
-
-connmanctl enable wifi
-
-while true; do
-  ip addr
-  sleep 10
-end
-END
-  chmod +x ${IMAGE_ROOTFS}/etc/init.d/dvr
+  echo "tz:5:respawn:/etc/init.d/dvr-start.sh" >> ${IMAGE_ROOTFS}/etc/inittab
 }
 
 ROOTFS_POSTPROCESS_COMMAND:append = " customize_image; "

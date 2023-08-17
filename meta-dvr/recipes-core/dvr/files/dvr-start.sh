@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dvr-resizepart.sh
+dvr-resizefs.sh
 
 connmanctl enable wifi
 

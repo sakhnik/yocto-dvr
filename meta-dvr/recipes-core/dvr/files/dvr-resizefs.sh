@@ -18,3 +18,5 @@ if [ $((end + 1)) -lt $sectors ]; then
     # The change won't have effect until next reboot because the device is mounted
     reboot
 fi
+
+resize2fs ${device}p2

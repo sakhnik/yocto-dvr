@@ -4,10 +4,10 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=71bec9001bfc79fcaa9f0024c35e8cdd"
 
 DEPENDS = ""
-RDEPENDS:${PN} = "connman-client"
+RDEPENDS:${PN} = "connman-client e2fsprogs-resize2fs"
 
 SRC_URI = "file://dvr-start.sh \
-           file://dvr-resizepart.sh \
+           file://dvr-resizefs.sh \
            file://COPYING \
           "
 
@@ -23,7 +23,7 @@ do_install() {
     install -d ${D}${sysconfdir}/init.d
     install -m 0755 ${WORKDIR}/dvr-start.sh ${D}${sysconfdir}/init.d
     install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/dvr-resizepart.sh ${D}${bindir}
+    install -m 0755 ${WORKDIR}/dvr-resizefs.sh ${D}${bindir}
 }
 
 FILES_${PN} = "${bindir} ${sysconfdir}"

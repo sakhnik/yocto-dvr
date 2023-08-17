@@ -9,10 +9,6 @@ IMAGE_FEATURES += " \
   debug-tweaks \
 "
 
-IMAGE_EXTRA_FEATURES += " \
-  inetutils inetutils-telnetd \
-"
-
 IMAGE_INSTALL += " \
   connman \
   connman-client \

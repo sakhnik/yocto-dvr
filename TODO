@@ -1,5 +1,6 @@
-- deploy and launch dvr.sh
 - lighttpd
 - root password
 - harden ssh server, key authentication
 - refactory image tweaks as proper yocto customizations
+- determine available space from the video partition instead of hard coding 20 Gb
+- set clock from NTP if possible

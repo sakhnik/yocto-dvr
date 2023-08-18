@@ -6,7 +6,5 @@ connmanctl enable wifi
 # Make sure there's partition for video storage
 dvr-mkst.sh
 
-while true; do
-  ip addr
-  sleep 10
-end
+# Run the video capture
+dvr.sh

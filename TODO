@@ -4,3 +4,4 @@
 - refactory image tweaks as proper yocto customizations
 - determine available space from the video partition instead of hard coding 20 Gb
 - set clock from NTP if possible
+- test whether it's possible to read video by sticking the sdcard into a phone

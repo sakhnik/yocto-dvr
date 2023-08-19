@@ -1,4 +1,4 @@
-- lighttpd
+- restart dvr service after being killed
 - root password
 - harden ssh server, key authentication
 - refactory image tweaks as proper yocto customizations

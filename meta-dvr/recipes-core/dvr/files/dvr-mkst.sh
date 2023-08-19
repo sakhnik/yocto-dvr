@@ -19,6 +19,6 @@ if ! (echo "$part" | grep -q "${device}p3"); then
 fi
 
 # Format the video partition if required
-if ! blkid ${device}p3; then
+if [ "$(blkid ${device}p3)" == "" ]; then
     mkfs.vfat -n VIDEO ${device}p3
 fi

@@ -2,18 +2,13 @@
 
 set -o pipefail
 
-storage=/var/local/dvr
-httproot=/www/pages
-duration=60000
-capacity_megs=20000
+source /etc/dvr.conf
 
 export PATH=/opt/vc/bin:$PATH
 
-mkdir -p "$storage"
-umount /dev/mmcblk0p3 2>/dev/null || true
-mount -o umask=0111 /dev/mmcblk0p3 "$storage"
-umount "$httproot" 2>/dev/null || true
-mount -o bind "$storage" "$httproot"
+# Power on WiFi. This should be done after the connmand has started.
+# Could be called in a separate startup script, but left here for conveniency.
+connmanctl enable wifi
 
 cd "$storage"
 
@@ -67,6 +62,7 @@ cleanup()
 {
     kill %1
     wait
+    killall raspivid || true
 }
 
 trap cleanup EXIT

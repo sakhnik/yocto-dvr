@@ -42,8 +42,6 @@ Type = wifi
 Name = Beefarm2G
 Passphrase = df8bc97315b948666f1abfb61dfc0da50e93e273acfc3a0a8e5bbbe83baf61bc
 END
-
-  echo "tz:5:respawn:/etc/init.d/dvr-start.sh" >> ${IMAGE_ROOTFS}/etc/inittab
 }
 
 ROOTFS_POSTPROCESS_COMMAND:append = " customize_image; "

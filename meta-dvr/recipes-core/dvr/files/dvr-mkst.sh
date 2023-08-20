@@ -2,6 +2,7 @@
 
 # Check and create a partition for videos
 
+source /etc/dvr.conf
 device=/dev/mmcblk0
 
 # Partition table
@@ -22,3 +23,7 @@ fi
 if [ "$(blkid ${device}p3)" == "" ]; then
     mkfs.vfat -n VIDEO ${device}p3
 fi
+
+mkdir -p "$storage"
+mount -o umask=0111 "${device}p3" "$storage"
+mount -o bind "$storage" "$httproot"

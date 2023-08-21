@@ -1,7 +1,7 @@
 - restart dvr service after being killed
 - root password
 - harden ssh server, key authentication
-- refactory image tweaks as proper yocto customizations
 - determine available space from the video partition instead of hard coding 20 Gb
 - set clock from NTP if possible
 - test whether it's possible to read video by sticking the sdcard into a phone
+- temperature control (cpu load is ~20%, t = 60°C)
